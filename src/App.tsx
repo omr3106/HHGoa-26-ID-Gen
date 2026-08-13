@@ -11,12 +11,12 @@ function App() {
 
   useEffect(() => {
     const img = new Image();
-    img.src = '/Certificate.png';
+    img.src = '/ID-Card.png';
     img.onload = () => {
       setCertImage(img);
     };
     img.onerror = () => {
-      console.error("Failed to load Certificate.png. Ensure it is placed in the public folder.");
+      console.error("Failed to load ID-Card.png. Ensure it is placed in the public folder.");
     }
   }, []);
 
@@ -103,7 +103,7 @@ function App() {
     const dataUrl = canvasRef.current.toDataURL('image/png');
     const a = document.createElement('a');
     a.href = dataUrl;
-    a.download = 'HackerHouse_Goa_Certificate.png';
+    a.download = 'HackerHouse_Goa_ID-Card.png';
     a.click();
   };
 
@@ -153,7 +153,7 @@ function App() {
               
               <div className="buttons">
                 <button className="primary-btn" onClick={handleDownload} disabled={!userImage && !name && !role}>
-                  Download Certificate
+                  Download ID-Card
                 </button>
                 <button className="secondary-btn" onClick={handleShareX} disabled={!userImage && !name && !role}>
                   Share on X
@@ -164,7 +164,7 @@ function App() {
             <div className="canvas-container anim" style={{ '--d': '0.5s' } as React.CSSProperties}>
               {!certImage && (
                 <div className="missing-cert">
-                  Missing <code>public/Certificate.png</code>. Please add it!
+                  Missing <code>public/ID-Card.png</code>. Please add it!
                 </div>
               )}
               <canvas ref={canvasRef} className="preview-canvas"></canvas>
